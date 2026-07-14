@@ -3,14 +3,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCD y mcm - Matemáticas</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>MCD y mcm - Tema 5</title>
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f6f9fc 0%, #e3edf7 100%);
+            min-height: 100vh;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            padding: 30px 32px 40px;
+            transition: all 0.2s;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e3a8a, #6d28d9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            padding: 12px 0 20px;
+            border-bottom: 4px solid #cbd5e1;
+            margin-bottom: 28px;
+            letter-spacing: -0.3px;
+        }
+
+        /* ----- TABS ----- */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 10px;
+            margin-bottom: 28px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+        }
+
+        .tab-btn {
+            padding: 10px 22px;
+            border: none;
+            border-radius: 40px;
+            background: #f1f5f9;
+            color: #1e293b;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .tab-btn:hover {
+            background: #dbeafe;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px -8px rgba(37, 99, 235, 0.3);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            box-shadow: 0 8px 20px -8px #3b82f6;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeSlide 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeSlide {
+            0% { opacity: 0; transform: translateY(12px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ----- TYPOGRAPHY & BOXES ----- */
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 28px 0 16px 0;
+            padding-left: 18px;
+            border-left: 8px solid #6d28d9;
+        }
+
+        .section-subtitle {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 22px 0 14px 0;
+            padding-left: 14px;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .definition-box {
+            background: linear-gradient(135deg, #f8faff 0%, #eef4ff 100%);
+            border-radius: 18px;
+            padding: 22px 28px;
+            margin: 18px 0 22px;
+            border-left: 8px solid #2563eb;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .definition-box p {
+            font-size: 1.08rem;
+            line-height: 1.7;
+            color: #0b1e33;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fde04755, #fef08a22);
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+            color: #6d28d9;
+        }
+
+        .example-box {
+            background: #fafcff;
+            border-radius: 18px;
+            padding: 18px 24px 20px;
+            margin: 18px 0;
+            border: 2px solid #e9edf4;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+
+        .example-box:hover {
+            border-color: #93b4f8;
+            box-shadow: 0 6px 16px -8px rgba(37, 99, 235, 0.2);
+        }
+
+        .example-box .label {
+            font-weight: 700;
+            color: #2563eb;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .math {
+            font-family: 'Courier New', 'Source Code Pro', monospace;
+            font-size: 1.05rem;
+            padding: 8px 0;
+            color: #0b1e33;
+            line-height: 1.9;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .math .highlight-solution {
+            background: #fef9c3;
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: inline-block;
+        }
+
+        .steps {
+            background: #f0f6fe;
+            border-radius: 16px;
+            padding: 16px 22px;
+            margin: 12px 0 18px;
+            list-style: none;
+        }
+
+        .steps li {
+            margin: 6px 0;
+            line-height: 1.7;
+            color: #0b1e33;
+            padding-left: 6px;
+        }
+
+        /* ----- EXERCISES ----- */
+        .exercise-section {
+            background: #fefbf5;
+            border-radius: 20px;
+            padding: 22px 26px;
+            margin: 28px 0 18px;
+            border: 2px dashed #fbbf24;
+        }
+
+        .exercise-section h4 {
+            color: #b45309;
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .exercise-item {
+            background: white;
+            padding: 14px 20px;
+            margin: 14px 0;
+            border-radius: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #eef2f6;
+            transition: 0.15s;
+        }
+
+        .exercise-item:hover {
+            border-color: #b9d0f0;
+            transform: scale(1.005);
+        }
+
+        .exercise-item .question {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #0b1e33;
+            flex: 1;
+            min-width: 200px;
+            padding-right: 12px;
+        }
+
+        .exercise-item .solution-btn {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            border: none;
+            padding: 8px 24px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px -4px #7c3aed66;
+            margin: 4px 0;
+        }
+
+        .exercise-item .solution-btn:hover {
+            transform: scale(1.06);
+            box-shadow: 0 8px 22px -6px #4f46e5;
+        }
+
+        .exercise-item .solution-answer {
+            display: none;
+            width: 100%;
+            margin-top: 14px;
+            padding: 14px 20px;
+            background: #ecfdf3;
+            border-radius: 14px;
+            color: #065f46;
+            font-weight: 600;
+            border-left: 6px solid #059669;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .exercise-item .solution-answer.show {
+            display: block;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 22px;
+            border-top: 2px solid #dce3ec;
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 700px) {
+            .container { padding: 18px 14px; }
+            h1 { font-size: 1.9rem; }
+            .tab-btn { padding: 8px 14px; font-size: 0.8rem; }
+            .exercise-item { flex-direction: column; align-items: stretch; }
+            .math { font-size: 0.95rem; }
+        }
+
+        @media (max-width: 480px) {
+            .tabs { gap: 4px; }
+            .tab-btn { font-size: 0.7rem; padding: 6px 10px; }
+            .section-title { font-size: 1.4rem; }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>📐 TEMA 5:MÁXIMO COMÚN DIVISOR (MCD) Y MÍNIMO COMÚN MÚLTIPLO (mcm)</h1>
+        <h1>📐 TEMA 5: MCD y mcm</h1>
 
-        <!-- Tabs -->
+        <!-- TABS -->
         <div class="tabs">
             <button class="tab-btn active" data-tab="tab1">📖 Definiciones</button>
             <button class="tab-btn" data-tab="tab2">🔢 MCD Monomios</button>
@@ -19,7 +316,7 @@
             <button class="tab-btn" data-tab="tab5">🧩 mcm Polinomios</button>
         </div>
 
-        <!-- ====== TAB 1: Definiciones ====== -->
+        <!-- ===== TAB 1: DEFINICIONES ===== -->
         <div id="tab1" class="tab-content active">
             <h2 class="section-title">5.1 Definición de máximo común divisor</h2>
             <div class="definition-box">
@@ -31,23 +328,23 @@
                 <p>El <span class="highlight">mínimo común múltiplo (m.c.m.)</span> de dos o más expresiones algebraicas es la expresión algebraica de <strong>menor coeficiente numérico</strong> y de <strong>menor grado</strong> que es divisible exactamente por cada una de las expresiones dadas.</p>
             </div>
 
-            <div style="background: #e3f2fd; border-radius: 14px; padding: 20px; margin-top: 20px;">
-                <h4 style="color: #0d47a1;">📌 Recordatorio</h4>
-                <ul style="padding-left: 20px; line-height: 1.8; color: #333;">
-                    <li><strong>M.C.D.</strong> → <span style="color:#2e7d32;">factores comunes</span> con <strong>menor</strong> exponente.</li>
-                    <li><strong>m.c.m.</strong> → <span style="color:#c62828;">factores comunes y no comunes</span> con <strong>mayor</strong> exponente.</li>
+            <div style="background: #e6f0ff; border-radius: 18px; padding: 22px 24px; margin-top: 20px;">
+                <h4 style="color: #1e3a8a; margin-bottom: 8px;">📌 Recordatorio</h4>
+                <ul style="padding-left: 22px; line-height: 1.9; color: #0b1e33;">
+                    <li><strong>M.C.D.</strong> → <span style="color:#0369a1;">factores comunes</span> con <strong>menor</strong> exponente.</li>
+                    <li><strong>m.c.m.</strong> → <span style="color:#b91c1c;">factores comunes y no comunes</span> con <strong>mayor</strong> exponente.</li>
                 </ul>
             </div>
         </div>
 
-        <!-- ====== TAB 2: MCD Monomios ====== -->
+        <!-- ===== TAB 2: MCD MONOMIOS ===== -->
         <div id="tab2" class="tab-content">
             <h2 class="section-title">5.2.1 MCD de Monomios</h2>
             <div class="definition-box">
                 <p><strong>Procedimiento:</strong></p>
                 <ul class="steps">
                     <li>• Se encuentra el M.C.D. de la <strong>parte numérica</strong> (descomposición en factores primos).</li>
-                    <li>• Se encuentra el M.C.D. de la <strong>parte literal</strong> (letras comunes con <span style="color:#c62828;">menor exponente</span>).</li>
+                    <li>• Se encuentra el M.C.D. de la <strong>parte literal</strong> (letras comunes con <span style="color:#b91c1c;">menor exponente</span>).</li>
                 </ul>
             </div>
 
@@ -77,7 +374,6 @@
                 </div>
             </div>
 
-            <!-- Ejercicios MCD Monomios -->
             <div class="exercise-section">
                 <h4>✏️ Ejercicios - MCD de Monomios</h4>
                 <div class="exercise-item">
@@ -108,7 +404,7 @@
             </div>
         </div>
 
-        <!-- ====== TAB 3: MCD Polinomios ====== -->
+        <!-- ===== TAB 3: MCD POLINOMIOS ===== -->
         <div id="tab3" class="tab-content">
             <h2 class="section-title">5.2.2 MCD de Polinomios</h2>
             <div class="definition-box">
@@ -116,7 +412,7 @@
                 <ul class="steps">
                     <li>• Expresar en productos mediante <strong>factorización</strong> (casos de factorización).</li>
                     <li>• M.C.D. de coeficientes (como en aritmética).</li>
-                    <li>• Factores comunes (simples y compuestos) con <span style="color:#c62828;">menor exponente</span>.</li>
+                    <li>• Factores comunes (simples y compuestos) con <span style="color:#b91c1c;">menor exponente</span>.</li>
                 </ul>
             </div>
 
@@ -148,7 +444,6 @@
                 </div>
             </div>
 
-            <!-- Ejercicios MCD Polinomios -->
             <div class="exercise-section">
                 <h4>✏️ Ejercicios - MCD de Polinomios</h4>
                 <div class="exercise-item">
@@ -179,14 +474,14 @@
             </div>
         </div>
 
-        <!-- ====== TAB 4: mcm Monomios ====== -->
+        <!-- ===== TAB 4: mcm MONOMIOS ===== -->
         <div id="tab4" class="tab-content">
             <h2 class="section-title">5.4.1 mcm de Monomios</h2>
             <div class="definition-box">
                 <p><strong>Procedimiento:</strong></p>
                 <ul class="steps">
                     <li>• Se encuentra el m.c.m. de la <strong>parte numérica</strong> (descomposición en factores primos).</li>
-                    <li>• Factores comunes y no comunes con <span style="color:#2e7d32;">mayor exponente</span>.</li>
+                    <li>• Factores comunes y no comunes con <span style="color:#0369a1;">mayor exponente</span>.</li>
                 </ul>
             </div>
 
@@ -217,7 +512,6 @@
                 </div>
             </div>
 
-            <!-- Ejercicios mcm Monomios -->
             <div class="exercise-section">
                 <h4>✏️ Ejercicios - mcm de Monomios</h4>
                 <div class="exercise-item">
@@ -248,20 +542,21 @@
             </div>
         </div>
 
-        <!-- ====== TAB 5: mcm Polinomios ====== -->
+        <!-- ===== TAB 5: mcm POLINOMIOS (contenido COMPLETO + nuevos ejercicios) ===== -->
         <div id="tab5" class="tab-content">
             <h2 class="section-title">5.4.2 mcm de Polinomios</h2>
             <div class="definition-box">
                 <p><strong>Procedimiento:</strong></p>
                 <ul class="steps">
-                    <li>• Expresar en productos mediante <strong>factorización</strong>.</li>
+                    <li>• Expresar en productos mediante <strong>factorización</strong> (casos de factorización).</li>
                     <li>• m.c.m. de coeficientes (como en aritmética).</li>
-                    <li>• Factores comunes y no comunes con <span style="color:#2e7d32;">mayor exponente</span>.</li>
+                    <li>• Factores comunes y no comunes con <span style="color:#0369a1;">mayor exponente</span>.</li>
                 </ul>
             </div>
 
+            <!-- EJEMPLO ORIGINAL -->
             <div class="example-box">
-                <div class="label">📘 Ejemplo</div>
+                <div class="label">📘 Ejemplo (del documento)</div>
                 <div class="math">
                     12x³−36x²−48x ; 8x⁴−8x²<br>
                     = 12x(x²−3x−4) ; 8x²(x²−1)<br>
@@ -270,17 +565,107 @@
                 </div>
             </div>
 
-            <div style="background: #fce4ec; border-radius: 14px; padding: 20px; margin-top: 20px;">
-                <h4 style="color: #c62828;">📌 Nota importante</h4>
-                <p style="line-height: 1.7; color: #333;">El m.c.m. de polinomios se obtiene multiplicando todos los factores <strong>comunes y no comunes</strong> con su <strong>mayor exponente</strong>. Siempre factorizar completamente primero.</p>
+            <!-- NUEVOS EJEMPLOS (de la imagen) -->
+            <div class="example-box">
+                <div class="label">📘 Ejemplo b) (de la imagen)</div>
+                <div class="math">
+                    m.c.m. de: 5a³y² − 5b³y²  ;  15a²y² − 30aby² + 15b²y²<br>
+                    = 5y²(a³ − b³)  ;  15y²(a² − 2ab + b²)<br>
+                    = 5y²(a − b)(a² + ab + b²)  ;  3·5y²(a − b)²<br>
+                    <span class="highlight-solution">m.c.m. = 15y²(a − b)²(a² + ab + b²)</span>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="label">📘 Ejemplo c) (de la imagen)</div>
+                <div class="math">
+                    m.c.m. de: x³ − 9x + 5x² − 45  ;  x⁴ + 2x³ − 15x²<br>
+                    = (x³ − 9x) + (5x² − 45)  ;  x²(x² + 2x − 15)<br>
+                    = x(x² − 9) + 5(x² − 9)  ;  x²(x + 5)(x − 3)<br>
+                    = (x² − 9)(x + 5)  ;  x²(x + 5)(x − 3)<br>
+                    = (x − 3)(x + 3)(x + 5)  ;  x²(x + 5)(x − 3)<br>
+                    <span class="highlight-solution">m.c.m. = x²(x − 3)(x + 3)(x + 5)</span>
+                </div>
+            </div>
+
+            <!-- EJERCICIOS COMPLETOS (incluye los nuevos de la imagen) -->
+            <div class="exercise-section">
+                <h4>✏️ Ejercicios - mcm de Polinomios</h4>
+
+                <!-- a) -->
+                <div class="exercise-item">
+                    <span class="question">a) 12m + 12  ;  42m − 42</span>
+                    <button class="solution-btn" data-solution="sol16">Mostrar solución</button>
+                    <div id="sol16" class="solution-answer">m.c.m. = 84(m + 1)(m − 1) = 84(m² − 1)</div>
+                </div>
+
+                <!-- b) -->
+                <div class="exercise-item">
+                    <span class="question">b) 8n² − 10n − 3  ;  20n² + 13n + 2  ;  10n² − 11n − 6</span>
+                    <button class="solution-btn" data-solution="sol17">Mostrar solución</button>
+                    <div id="sol17" class="solution-answer">m.c.m. = (4n+1)(2n−3)(5n+2)(2n+1)</div>
+                </div>
+
+                <!-- c) -->
+                <div class="exercise-item">
+                    <span class="question">c) a³ − 27b³  ;  a² − 9b²  ;  a² − 6ab + 9b²  ;  a² + 3ab + 9b²</span>
+                    <button class="solution-btn" data-solution="sol18">Mostrar solución</button>
+                    <div id="sol18" class="solution-answer">m.c.m. = (a − 3b)²(a + 3b)(a² + 3ab + 9b²)</div>
+                </div>
+
+                <!-- d) -->
+                <div class="exercise-item">
+                    <span class="question">d) p³ + q³  ;  (p + q)³</span>
+                    <button class="solution-btn" data-solution="sol19">Mostrar solución</button>
+                    <div id="sol19" class="solution-answer">m.c.m. = (p + q)³(p² − pq + q²)</div>
+                </div>
+
+                <!-- e) -->
+                <div class="exercise-item">
+                    <span class="question">e) x² + 2x  ;  x³ − 2x²  ;  x² − 4</span>
+                    <button class="solution-btn" data-solution="sol20">Mostrar solución</button>
+                    <div id="sol20" class="solution-answer">m.c.m. = x²(x + 2)(x − 2) = x²(x² − 4)</div>
+                </div>
+            </div>
+
+            <!-- Nota adicional -->
+            <div style="background: #fce7f3; border-radius: 18px; padding: 20px 24px; margin-top: 18px;">
+                <h4 style="color: #9d174d;">📌 Nota importante</h4>
+                <p style="line-height: 1.7; color: #1e1b2e;">El m.c.m. de polinomios se obtiene multiplicando todos los factores <strong>comunes y no comunes</strong> con su <strong>mayor exponente</strong>. Siempre factorizar completamente primero.</p>
             </div>
         </div>
 
         <div class="footer-note">
-            📚 · Tema 5: Máximo Común Divisor y Mínimo Común Múltiplo
+            📚 Documento didactizado · Tema 5: Máximo Común Divisor y Mínimo Común Múltiplo · (sin 5.5)
         </div>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <script>
+        // ===== TABS =====
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                const target = document.getElementById(this.dataset.tab);
+                if (target) target.classList.add('active');
+            });
+        });
+
+        // ===== SOLUTIONS TOGGLE =====
+        const solBtns = document.querySelectorAll('.solution-btn');
+        solBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetId = this.dataset.solution;
+                const answerDiv = document.getElementById(targetId);
+                if (answerDiv) {
+                    answerDiv.classList.toggle('show');
+                    this.textContent = answerDiv.classList.contains('show') ? 'Ocultar solución' : 'Mostrar solución';
+                }
+            });
+        });
+
+        console.log('✅ Página didactizada
