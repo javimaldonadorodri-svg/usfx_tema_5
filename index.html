@@ -3,53 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCD y mcm - Tema 5</title>
+    <title>TEMA 5: MCD y mcm</title>
     <style>
-        /* ----- RESET & BASE ----- */
+        /* ===== RESET Y BASE ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
         }
 
         body {
-            background: linear-gradient(145deg, #f6f9fc 0%, #e3edf7 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(145deg, #f0f4ff 0%, #d9e2ec 100%);
             min-height: 100vh;
-            padding: 24px 16px;
+            padding: 20px;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
             background: #ffffff;
-            border-radius: 32px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            padding: 30px 32px 40px;
-            transition: all 0.2s;
+            border-radius: 28px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            padding: 28px 30px 35px;
         }
 
         h1 {
             text-align: center;
-            font-size: 2.4rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #1e3a8a, #6d28d9);
+            font-size: 2.3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1a237e, #4a148c, #6a1b9a);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            padding: 12px 0 20px;
-            border-bottom: 4px solid #cbd5e1;
-            margin-bottom: 28px;
-            letter-spacing: -0.3px;
+            padding: 15px 0 20px;
+            border-bottom: 4px solid #b39ddb;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
         }
 
-        /* ----- TABS ----- */
+        /* ===== TABS ===== */
         .tabs {
             display: flex;
             flex-wrap: wrap;
             gap: 6px 10px;
-            margin-bottom: 28px;
-            border-bottom: 2px solid #e2e8f0;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #e8e0f0;
             padding-bottom: 12px;
         }
 
@@ -57,25 +56,25 @@
             padding: 10px 22px;
             border: none;
             border-radius: 40px;
-            background: #f1f5f9;
-            color: #1e293b;
+            background: #f3edf7;
+            color: #3e2c4a;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             cursor: pointer;
-            transition: all 0.25s ease;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
         }
 
         .tab-btn:hover {
-            background: #dbeafe;
+            background: #e8ddf5;
             transform: translateY(-2px);
-            box-shadow: 0 8px 18px -8px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 6px 16px rgba(106, 27, 154, 0.2);
         }
 
         .tab-btn.active {
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            background: linear-gradient(135deg, #5e35b1, #7b1fa2);
             color: white;
-            box-shadow: 0 8px 20px -8px #3b82f6;
+            box-shadow: 0 6px 20px rgba(106, 27, 154, 0.35);
         }
 
         .tab-content {
@@ -92,67 +91,67 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* ----- TYPOGRAPHY & BOXES ----- */
+        /* ===== TIPOGRAFÍA ===== */
         .section-title {
-            font-size: 1.75rem;
+            font-size: 1.7rem;
             font-weight: 700;
-            color: #0f172a;
-            margin: 28px 0 16px 0;
-            padding-left: 18px;
-            border-left: 8px solid #6d28d9;
+            color: #1a1a2e;
+            margin: 25px 0 14px 0;
+            padding-left: 16px;
+            border-left: 7px solid #7b1fa2;
         }
 
         .section-subtitle {
-            font-size: 1.35rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            color: #1e293b;
-            margin: 22px 0 14px 0;
+            color: #2d2d44;
+            margin: 20px 0 12px 0;
             padding-left: 14px;
-            border-left: 5px solid #3b82f6;
+            border-left: 5px solid #5e35b1;
         }
 
         .definition-box {
-            background: linear-gradient(135deg, #f8faff 0%, #eef4ff 100%);
-            border-radius: 18px;
-            padding: 22px 28px;
-            margin: 18px 0 22px;
-            border-left: 8px solid #2563eb;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            background: linear-gradient(135deg, #f8f4ff, #ede7f6);
+            border-radius: 16px;
+            padding: 20px 26px;
+            margin: 14px 0 20px;
+            border-left: 8px solid #7b1fa2;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
         }
 
         .definition-box p {
-            font-size: 1.08rem;
-            line-height: 1.7;
-            color: #0b1e33;
+            font-size: 1.07rem;
+            line-height: 1.8;
+            color: #1a1a2e;
         }
 
         .highlight {
-            background: linear-gradient(120deg, #fde04755, #fef08a22);
-            padding: 2px 10px;
+            background: linear-gradient(120deg, #fff3b0, #ffecb3);
+            padding: 2px 12px;
             border-radius: 20px;
             font-weight: 700;
-            color: #6d28d9;
+            color: #4a148c;
         }
 
         .example-box {
-            background: #fafcff;
-            border-radius: 18px;
-            padding: 18px 24px 20px;
-            margin: 18px 0;
-            border: 2px solid #e9edf4;
-            transition: border 0.2s, box-shadow 0.2s;
+            background: #faf8ff;
+            border-radius: 16px;
+            padding: 16px 24px 18px;
+            margin: 14px 0;
+            border: 2px solid #e8e0f0;
+            transition: border 0.25s, box-shadow 0.25s;
         }
 
         .example-box:hover {
-            border-color: #93b4f8;
-            box-shadow: 0 6px 16px -8px rgba(37, 99, 235, 0.2);
+            border-color: #b39ddb;
+            box-shadow: 0 4px 14px rgba(106, 27, 154, 0.08);
         }
 
         .example-box .label {
             font-weight: 700;
-            color: #2563eb;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            color: #5e35b1;
+            font-size: 1.08rem;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -161,51 +160,51 @@
         .math {
             font-family: 'Courier New', 'Source Code Pro', monospace;
             font-size: 1.05rem;
-            padding: 8px 0;
+            padding: 6px 0;
             color: #0b1e33;
-            line-height: 1.9;
+            line-height: 2;
             overflow-x: auto;
             white-space: pre-wrap;
             word-break: break-word;
         }
 
         .math .highlight-solution {
-            background: #fef9c3;
-            padding: 2px 12px;
+            background: #fff8b0;
+            padding: 2px 14px;
             border-radius: 30px;
             font-weight: 700;
-            color: #1e3a8a;
+            color: #1a237e;
             display: inline-block;
         }
 
         .steps {
-            background: #f0f6fe;
-            border-radius: 16px;
-            padding: 16px 22px;
-            margin: 12px 0 18px;
+            background: #f0ebf8;
+            border-radius: 14px;
+            padding: 14px 22px;
+            margin: 10px 0 16px;
             list-style: none;
         }
 
         .steps li {
-            margin: 6px 0;
+            margin: 5px 0;
             line-height: 1.7;
-            color: #0b1e33;
-            padding-left: 6px;
+            color: #1a1a2e;
+            padding-left: 4px;
         }
 
-        /* ----- EXERCISES ----- */
+        /* ===== EJERCICIOS ===== */
         .exercise-section {
-            background: #fefbf5;
-            border-radius: 20px;
-            padding: 22px 26px;
-            margin: 28px 0 18px;
-            border: 2px dashed #fbbf24;
+            background: #fffbf0;
+            border-radius: 18px;
+            padding: 20px 24px 24px;
+            margin: 24px 0 16px;
+            border: 2px dashed #ffb74d;
         }
 
         .exercise-section h4 {
-            color: #b45309;
-            font-size: 1.25rem;
-            margin-bottom: 16px;
+            color: #bf360c;
+            font-size: 1.22rem;
+            margin-bottom: 14px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -213,63 +212,63 @@
 
         .exercise-item {
             background: white;
-            padding: 14px 20px;
-            margin: 14px 0;
-            border-radius: 16px;
+            padding: 12px 18px;
+            margin: 12px 0;
+            border-radius: 14px;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            border: 1px solid #eef2f6;
+            border: 1px solid #efebe9;
             transition: 0.15s;
         }
 
         .exercise-item:hover {
-            border-color: #b9d0f0;
+            border-color: #d7cce0;
             transform: scale(1.005);
         }
 
         .exercise-item .question {
-            font-size: 1.05rem;
+            font-size: 1.04rem;
             font-weight: 500;
-            color: #0b1e33;
+            color: #1a1a2e;
             flex: 1;
             min-width: 200px;
             padding-right: 12px;
         }
 
         .exercise-item .solution-btn {
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            background: linear-gradient(135deg, #5e35b1, #7b1fa2);
             color: white;
             border: none;
-            padding: 8px 24px;
+            padding: 7px 22px;
             border-radius: 40px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-            box-shadow: 0 4px 12px -4px #7c3aed66;
+            font-size: 0.88rem;
+            transition: all 0.25s;
+            box-shadow: 0 4px 14px rgba(106, 27, 154, 0.3);
             margin: 4px 0;
         }
 
         .exercise-item .solution-btn:hover {
             transform: scale(1.06);
-            box-shadow: 0 8px 22px -6px #4f46e5;
+            box-shadow: 0 6px 22px rgba(106, 27, 154, 0.4);
         }
 
         .exercise-item .solution-answer {
             display: none;
             width: 100%;
-            margin-top: 14px;
-            padding: 14px 20px;
-            background: #ecfdf3;
-            border-radius: 14px;
-            color: #065f46;
+            margin-top: 12px;
+            padding: 12px 18px;
+            background: #e8f5e9;
+            border-radius: 12px;
+            color: #1b5e20;
             font-weight: 600;
-            border-left: 6px solid #059669;
+            border-left: 6px solid #2e7d32;
             font-family: 'Courier New', monospace;
-            font-size: 1rem;
+            font-size: 0.98rem;
             white-space: pre-wrap;
             word-break: break-word;
         }
@@ -280,34 +279,63 @@
 
         .footer-note {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 22px;
-            border-top: 2px solid #dce3ec;
-            color: #64748b;
-            font-size: 0.95rem;
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 2px solid #e8e0f0;
+            color: #6a5b7a;
+            font-size: 0.92rem;
         }
 
-        /* ----- RESPONSIVE ----- */
+        .badge {
+            display: inline-block;
+            background: #7b1fa2;
+            color: white;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 6px;
+        }
+
+        .note-box {
+            background: #fce4ec;
+            border-radius: 16px;
+            padding: 18px 22px;
+            margin-top: 18px;
+        }
+
+        .note-box h4 {
+            color: #880e4f;
+            margin-bottom: 6px;
+        }
+
+        .note-box p {
+            line-height: 1.7;
+            color: #1a1a2e;
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 700px) {
-            .container { padding: 18px 14px; }
-            h1 { font-size: 1.9rem; }
-            .tab-btn { padding: 8px 14px; font-size: 0.8rem; }
+            .container { padding: 16px 12px; }
+            h1 { font-size: 1.7rem; }
+            .tab-btn { padding: 7px 14px; font-size: 0.78rem; }
             .exercise-item { flex-direction: column; align-items: stretch; }
-            .math { font-size: 0.95rem; }
+            .math { font-size: 0.92rem; }
         }
 
         @media (max-width: 480px) {
             .tabs { gap: 4px; }
-            .tab-btn { font-size: 0.7rem; padding: 6px 10px; }
-            .section-title { font-size: 1.4rem; }
+            .tab-btn { font-size: 0.68rem; padding: 5px 10px; }
+            .section-title { font-size: 1.3rem; }
+            .definition-box p { font-size: 0.98rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>📐 TEMA 5: MCD y mcm</h1>
+        <h1>📐 TEMA 5: MÁXIMO COMÚN DIVISOR Y MÍNIMO COMÚN MÚLTIPLO</h1>
 
-        <!-- TABS -->
+        <!-- ===== PESTAÑAS ===== -->
         <div class="tabs">
             <button class="tab-btn active" data-tab="tab1">📖 Definiciones</button>
             <button class="tab-btn" data-tab="tab2">🔢 MCD Monomios</button>
@@ -316,7 +344,9 @@
             <button class="tab-btn" data-tab="tab5">🧩 mcm Polinomios</button>
         </div>
 
-        <!-- ===== TAB 1: DEFINICIONES ===== -->
+        <!-- ============================================================ -->
+        <!-- TAB 1: DEFINICIONES                                           -->
+        <!-- ============================================================ -->
         <div id="tab1" class="tab-content active">
             <h2 class="section-title">5.1 Definición de máximo común divisor</h2>
             <div class="definition-box">
@@ -328,344 +358,399 @@
                 <p>El <span class="highlight">mínimo común múltiplo (m.c.m.)</span> de dos o más expresiones algebraicas es la expresión algebraica de <strong>menor coeficiente numérico</strong> y de <strong>menor grado</strong> que es divisible exactamente por cada una de las expresiones dadas.</p>
             </div>
 
-            <div style="background: #e6f0ff; border-radius: 18px; padding: 22px 24px; margin-top: 20px;">
-                <h4 style="color: #1e3a8a; margin-bottom: 8px;">📌 Recordatorio</h4>
-                <ul style="padding-left: 22px; line-height: 1.9; color: #0b1e33;">
-                    <li><strong>M.C.D.</strong> → <span style="color:#0369a1;">factores comunes</span> con <strong>menor</strong> exponente.</li>
-                    <li><strong>m.c.m.</strong> → <span style="color:#b91c1c;">factores comunes y no comunes</span> con <strong>mayor</strong> exponente.</li>
+            <div style="background: #e0e7ff; border-radius: 16px; padding: 18px 22px; margin-top: 18px;">
+                <h4 style="color: #1a237e; margin-bottom: 6px;">📌 Recordatorio</h4>
+                <ul style="padding-left: 22px; line-height: 1.9; color: #1a1a2e;">
+                    <li><strong>M.C.D.</strong> → <span style="color:#00695c;">factores comunes</span> con <strong>menor</strong> exponente.</li>
+                    <li><strong>m.c.m.</strong> → <span style="color:#b71c1c;">factores comunes y no comunes</span> con <strong>mayor</strong> exponente.</li>
                 </ul>
             </div>
         </div>
 
-        <!-- ===== TAB 2: MCD MONOMIOS ===== -->
+        <!-- ============================================================ -->
+        <!-- TAB 2: MCD MONOMIOS                                           -->
+        <!-- ============================================================ -->
         <div id="tab2" class="tab-content">
-            <h2 class="section-title">5.2.1 MCD de Monomios</h2>
+            <h2 class="section-title">5.2.1 Máximo común divisor de monomios</h2>
+
             <div class="definition-box">
                 <p><strong>Procedimiento:</strong></p>
                 <ul class="steps">
-                    <li>• Se encuentra el M.C.D. de la <strong>parte numérica</strong> (descomposición en factores primos).</li>
-                    <li>• Se encuentra el M.C.D. de la <strong>parte literal</strong> (letras comunes con <span style="color:#b91c1c;">menor exponente</span>).</li>
+                    <li>• Se encuentra el M.C.D. de la <strong>parte numérica</strong>, realizando la descomposición en sus factores primos.</li>
+                    <li>• Se encuentra el M.C.D. de la <strong>parte literal</strong>, buscando letras comunes de <span style="color:#b71c1c;">menor exponente</span>.</li>
                 </ul>
             </div>
 
+            <!-- Ejemplo a -->
             <div class="example-box">
                 <div class="label">📘 Ejemplo a)</div>
                 <div class="math">
-                    84x⁵y²z⁶ ; 126x³y⁴w⁵<br>
-                    = 2²·3·7·x⁵y²z⁶ ; 2·3²·7·x³y⁴w⁵<br>
+                    84x⁵y²z⁶ &nbsp; ; &nbsp; 126x³y⁴w⁵<br>
+                    = 2²·3·7·x⁵y²z⁶ &nbsp; ; &nbsp; 2·3²·7·x³y⁴w⁵<br>
                     <span class="highlight-solution">M.C.D. = 2·3·7·x³y² = 42x³y²</span>
                 </div>
             </div>
 
+            <!-- Ejemplo b -->
             <div class="example-box">
                 <div class="label">📘 Ejemplo b)</div>
                 <div class="math">
-                    −2ab ; 4mn² ; 3amx<br>
-                    <span class="highlight-solution">M.C.D. = 1</span> (sin factores comunes)
+                    −2ab &nbsp; ; &nbsp; 4mn² &nbsp; ; &nbsp; 3amx<br>
+                    <span class="highlight-solution">M.C.D. = 1</span> (no tienen factores comunes)
                 </div>
             </div>
 
+            <!-- Ejemplo c -->
             <div class="example-box">
                 <div class="label">📘 Ejemplo c)</div>
                 <div class="math">
-                    160a⁷b³c² ; 192b⁶c⁴d ; 48ab⁴c<br>
-                    = 2⁵·5·a⁷b³c² ; 2⁶·3·b⁶c⁴d ; 2⁴·3·a·b⁴c<br>
+                    160a⁷b³c² &nbsp; ; &nbsp; 192b⁶c⁴d &nbsp; ; &nbsp; 48ab⁴c<br>
+                    = 2⁵·5·a⁷b³c² &nbsp; ; &nbsp; 2⁶·3·b⁶c⁴d &nbsp; ; &nbsp; 2⁴·3·a·b⁴c<br>
                     <span class="highlight-solution">M.C.D. = 2⁴·b³·c = 16b³c</span>
                 </div>
             </div>
 
+            <!-- Ejercicios MCD Monomios -->
             <div class="exercise-section">
-                <h4>✏️ Ejercicios - MCD de Monomios</h4>
+                <h4>✏️ Ejercicios — MCD de monomios</h4>
+
                 <div class="exercise-item">
-                    <span class="question">a) 15a²b³c ; 12ab²x ; 36b⁴cy</span>
+                    <span class="question">a) 15a²b³c &nbsp;;&nbsp; 12ab²x &nbsp;;&nbsp; 36b⁴cy</span>
                     <button class="solution-btn" data-solution="sol1">Mostrar solución</button>
                     <div id="sol1" class="solution-answer">M.C.D. = 3b²c</div>
                 </div>
+
                 <div class="exercise-item">
-                    <span class="question">b) 50m⁴y⁵z² ; 45m²y³z⁶ ; 70m³y⁴z⁴</span>
+                    <span class="question">b) 50m⁴y⁵z² &nbsp;;&nbsp; 45m²y³z⁶ &nbsp;;&nbsp; 70m³y⁴z⁴</span>
                     <button class="solution-btn" data-solution="sol2">Mostrar solución</button>
                     <div id="sol2" class="solution-answer">M.C.D. = 5m²y³z²</div>
                 </div>
+
                 <div class="exercise-item">
-                    <span class="question">c) 8x²(y−1) ; 12x(y−1)²</span>
+                    <span class="question">c) 8x²(y−1) &nbsp;;&nbsp; 12x(y−1)²</span>
                     <button class="solution-btn" data-solution="sol3">Mostrar solución</button>
                     <div id="sol3" class="solution-answer">M.C.D. = 4x(y−1)</div>
                 </div>
+
                 <div class="exercise-item">
-                    <span class="question">d) 4m²n ; 8m³n² ; 2cm²n ; 10c²mn³</span>
+                    <span class="question">d) 4m²n &nbsp;;&nbsp; 8m³n² &nbsp;;&nbsp; 2cm²n &nbsp;;&nbsp; 10c²mn³</span>
                     <button class="solution-btn" data-solution="sol4">Mostrar solución</button>
                     <div id="sol4" class="solution-answer">M.C.D. = 2mn</div>
                 </div>
+
                 <div class="exercise-item">
-                    <span class="question">e) 36a²b⁴ ; 48a³b⁸c ; 60a⁴b⁸m</span>
+                    <span class="question">e) 36a²b⁴ &nbsp;;&nbsp; 48a³b⁸c &nbsp;;&nbsp; 60a⁴b⁸m</span>
                     <button class="solution-btn" data-solution="sol5">Mostrar solución</button>
                     <div id="sol5" class="solution-answer">M.C.D. = 12a²b⁴</div>
                 </div>
             </div>
         </div>
 
-        <!-- ===== TAB 3: MCD POLINOMIOS ===== -->
+        <!-- ============================================================ -->
+        <!-- TAB 3: MCD POLINOMIOS                                         -->
+        <!-- ============================================================ -->
         <div id="tab3" class="tab-content">
-            <h2 class="section-title">5.2.2 MCD de Polinomios</h2>
+            <h2 class="section-title">5.2.2 Máximo común divisor de polinomios</h2>
+
             <div class="definition-box">
                 <p><strong>Procedimiento:</strong></p>
                 <ul class="steps">
-                    <li>• Expresar en productos mediante <strong>factorización</strong> (casos de factorización).</li>
-                    <li>• M.C.D. de coeficientes (como en aritmética).</li>
-                    <li>• Factores comunes (simples y compuestos) con <span style="color:#b91c1c;">menor exponente</span>.</li>
+                    <li>• Se debe expresar en productos por medio de la descomposición de factores (casos de factorización).</li>
+                    <li>• Se encuentra el M.C.D. de los coeficientes como en aritmética, de la parte literal, de los factores simples y compuestos solo lo común y con <span style="color:#b71c1c;">menor exponente</span>.</li>
                 </ul>
             </div>
 
+            <!-- Ejemplo a -->
             <div class="example-box">
                 <div class="label">📘 Ejemplo a)</div>
                 <div class="math">
-                    3x²+3x−60 ; 6x²−18x−24<br>
-                    = 3(x²+x−20) ; 6(x²−3x−4)<br>
-                    = 3(x+5)(x−4) ; 2·3(x−4)(x+1)<br>
+                    3x²+3x−60 &nbsp;;&nbsp; 6x²−18x−24<br>
+                    = 3(x²+x−20) &nbsp;;&nbsp; 6(x²−3x−4)<br>
+                    = 3(x+5)(x−4) &nbsp;;&nbsp; 2·3(x−4)(x+1)<br>
                     <span class="highlight-solution">M.C.D. = 3(x−4)</span>
                 </div>
             </div>
 
+            <!-- Ejemplo b -->
             <div class="example-box">
                 <div class="label">📘 Ejemplo b)</div>
                 <div class="math">
-                    4m²−n² ; 8m³+n³ ; 4m²+4mn+n²<br>
-                    = (2m−n)(2m+n) ; (2m+n)(4m²−2mn+n²) ; (2m+n)²<br>
+                    4m²−n² &nbsp;;&nbsp; 8m³+n³ &nbsp;;&nbsp; 4m²+4mn+n²<br>
+                    = (2m−n)(2m+n) &nbsp;;&nbsp; (2m+n)(4m²−2mn+n²) &nbsp;;&nbsp; (2m+n)²<br>
                     <span class="highlight-solution">M.C.D. = (2m+n)</span>
                 </div>
             </div>
 
+            <!-- Ejemplo c -->
             <div class="example-box">
                 <div class="label">📘 Ejemplo c)</div>
                 <div class="math">
-                    6p+6q ; 5p²+10pq+5q² ; 7p²−7q²<br>
-                    = 6(p+q) ; 5(p+q)² ; 7(p+q)(p−q)<br>
+                    6p+6q &nbsp;;&nbsp; 5p²+10pq+5q² &nbsp;;&nbsp; 7p²−7q²<br>
+                    = 6(p+q) &nbsp;;&nbsp; 5(p+q)² &nbsp;;&nbsp; 7(p+q)(p−q)<br>
                     <span class="highlight-solution">M.C.D. = (p+q)</span>
                 </div>
             </div>
 
+            <!-- Ejercicios MCD Polinomios -->
             <div class="exercise-section">
-                <h4>✏️ Ejercicios - MCD de Polinomios</h4>
+                <h4>✏️ Ejercicios — MCD de polinomios</h4>
+
                 <div class="exercise-item">
-                    <span class="question">a) 2x³−2x² ; 3x²−3x ; 4x³−4x²</span>
+                    <span class="question">a) 2x³−2x² &nbsp;;&nbsp; 3x²−3x &nbsp;;&nbsp; 4x³−4x²</span>
                     <button class="solution-btn" data-solution="sol6">Mostrar solución</button>
                     <div id="sol6" class="solution-answer">M.C.D. = x(x−1)</div>
                 </div>
+
                 <div class="exercise-item">
-                    <span class="question">b) 2x³+4x²−16x ; 16(x²−4) ; x²−7x+10</span>
+                    <span class="question">b) 2x³+4x²−16x &nbsp;;&nbsp; 16(x²−4) &nbsp;;&nbsp; x²−7x+10</span>
                     <button class="solution-btn" data-solution="sol7">Mostrar solución</button>
                     <div id="sol7" class="solution-answer">M.C.D. = (x−2)</div>
                 </div>
+
                 <div class="exercise-item">
-                    <span class="question">c) 2a²+2ab ; 4a⁴−4a²b²</span>
+                    <span class="question">c) 2a²+2ab &nbsp;;&nbsp; 4a⁴−4a²b²</span>
                     <button class="solution-btn" data-solution="sol8">Mostrar solución</button>
                     <div id="sol8" class="solution-answer">M.C.D. = 2a(a+b)</div>
                 </div>
+
                 <div class="exercise-item">
-                    <span class="question">d) 4m²+8m−12 ; 2m²−6m+4 ; 6m²+18m−24</span>
+                    <span class="question">d) 4m²+8m−12 &nbsp;;&nbsp; 2m²−6m+4 &nbsp;;&nbsp; 6m²+18m−24</span>
                     <button class="solution-btn" data-solution="sol9">Mostrar solución</button>
                     <div id="sol9" class="solution-answer">M.C.D. = 2(m−1)</div>
                 </div>
+
                 <div class="exercise-item">
-                    <span class="question">e) 3a²+6ab+3b² ; 4a²−b² ; a²+4ab+4b²</span>
+                    <span class="question">e) 3a²+6ab+3b² &nbsp;;&nbsp; 4a²−b² &nbsp;;&nbsp; a²+4ab+4b²</span>
                     <button class="solution-btn" data-solution="sol10">Mostrar solución</button>
                     <div id="sol10" class="solution-answer">M.C.D. = (a+b)</div>
                 </div>
             </div>
         </div>
 
-        <!-- ===== TAB 4: mcm MONOMIOS ===== -->
+        <!-- ============================================================ -->
+        <!-- TAB 4: mcm MONOMIOS                                           -->
+        <!-- ============================================================ -->
         <div id="tab4" class="tab-content">
-            <h2 class="section-title">5.4.1 mcm de Monomios</h2>
+            <h2 class="section-title">5.4.1 Mínimo común múltiplo de monomios</h2>
+
             <div class="definition-box">
                 <p><strong>Procedimiento:</strong></p>
                 <ul class="steps">
-                    <li>• Se encuentra el m.c.m. de la <strong>parte numérica</strong> (descomposición en factores primos).</li>
-                    <li>• Factores comunes y no comunes con <span style="color:#0369a1;">mayor exponente</span>.</li>
+                    <li>• Se encuentra el m.c.m. de la <strong>parte numérica</strong>, realizando la descomposición en sus factores primos.</li>
+                    <li>• Se encuentra el m.c.m. de los coeficientes como en aritmética, de la parte literal, de los factores simples y compuestos los comunes y no comunes con <span style="color:#00695c;">mayor exponente</span>.</li>
                 </ul>
             </div>
 
+            <!-- Ejemplo a -->
             <div class="example-box">
                 <div class="label">📘 Ejemplo a)</div>
                 <div class="math">
-                    42a²bc ; 21a²b²m ; 15a⁵x<br>
-                    = 2·3·7·a²bc ; 3·7·a²b²m ; 3·5·a⁵x<br>
+                    42a²bc &nbsp;;&nbsp; 21a²b²m &nbsp;;&nbsp; 15a⁵x<br>
+                    = 2·3·7·a²bc &nbsp;;&nbsp; 3·7·a²b²m &nbsp;;&nbsp; 3·5·a⁵x<br>
                     <span class="highlight-solution">m.c.m. = 2·3·7·5·a⁵·b²·c·m·x = 210a⁵b²cmx</span>
                 </div>
             </div>
 
+            <!-- Ejemplo b -->
             <div class="example-box">
                 <div class="label">📘 Ejemplo b)</div>
                 <div class="math">
-                    15mn² ; 10m² ; 20n³ ; 25mn⁴<br>
-                    = 3·5·mn² ; 2·5·m² ; 2²·5·n³ ; 5²·mn⁴<br>
+                    15mn² &nbsp;;&nbsp; 10m² &nbsp;;&nbsp; 20n³ &nbsp;;&nbsp; 25mn⁴<br>
+                    = 3·5·mn² &nbsp;;&nbsp; 2·5·m² &nbsp;;&nbsp; 2²·5·n³ &nbsp;;&nbsp; 5²·mn⁴<br>
                     <span class="highlight-solution">m.c.m. = 3·5²·2²·m²·n⁴ = 300m²n⁴</span>
                 </div>
             </div>
 
+            <!-- Ejemplo c -->
             <div class="example-box">
                 <div class="label">📘 Ejemplo c)</div>
                 <div class="math">
-                    4m(x−1) ; 2a(x−1)² ; 6m²(x−1)³<br>
-                    = 2²·m·(x−1) ; 2·a·(x−1)² ; 2·3·m²·(x−1)³<br>
+                    4m(x−1) &nbsp;;&nbsp; 2a(x−1)² &nbsp;;&nbsp; 6m²(x−1)³<br>
+                    = 2²·m·(x−1) &nbsp;;&nbsp; 2·a·(x−1)² &nbsp;;&nbsp; 2·3·m²·(x−1)³<br>
                     <span class="highlight-solution">m.c.m. = 2²·3·a·m²·(x−1)³ = 12am²(x−1)³</span>
                 </div>
             </div>
 
+            <!-- Ejercicios mcm Monomios -->
             <div class="exercise-section">
-                <h4>✏️ Ejercicios - mcm de Monomios</h4>
+                <h4>✏️ Ejercicios — mcm de monomios</h4>
+
                 <div class="exercise-item">
-                    <span class="question">a) 25a³bc⁷ ; 10ab²m</span>
+                    <span class="question">a) 25a³bc⁷ &nbsp;;&nbsp; 10ab²m</span>
                     <button class="solution-btn" data-solution="sol11">Mostrar solución</button>
                     <div id="sol11" class="solution-answer">m.c.m. = 50a³b²c⁷m</div>
                 </div>
+
                 <div class="exercise-item">
-                    <span class="question">b) 8x²(m−n) ; 12x(m−n)²</span>
+                    <span class="question">b) 8x²(m−n) &nbsp;;&nbsp; 12x(m−n)²</span>
                     <button class="solution-btn" data-solution="sol12">Mostrar solución</button>
                     <div id="sol12" class="solution-answer">m.c.m. = 24x²(m−n)²</div>
                 </div>
+
                 <div class="exercise-item">
-                    <span class="question">c) 60x²y⁷z ; 100x³z⁴ ; 85yz⁵</span>
+                    <span class="question">c) 60x²y⁷z &nbsp;;&nbsp; 100x³z⁴ &nbsp;;&nbsp; 85yz⁵</span>
                     <button class="solution-btn" data-solution="sol13">Mostrar solución</button>
                     <div id="sol13" class="solution-answer">m.c.m. = 5100x³y⁷z⁵</div>
                 </div>
+
                 <div class="exercise-item">
-                    <span class="question">d) 4a(b−2)(b+2) ; 6a²(b+2)²</span>
+                    <span class="question">d) 4a(b−2)(b+2) &nbsp;;&nbsp; 6a²(b+2)²</span>
                     <button class="solution-btn" data-solution="sol14">Mostrar solución</button>
                     <div id="sol14" class="solution-answer">m.c.m. = 12a²(b−2)(b+2)²</div>
                 </div>
+
                 <div class="exercise-item">
-                    <span class="question">e) 3ax ; 2mn ; 7by</span>
+                    <span class="question">e) 3ax &nbsp;;&nbsp; 2mn &nbsp;;&nbsp; 7by</span>
                     <button class="solution-btn" data-solution="sol15">Mostrar solución</button>
                     <div id="sol15" class="solution-answer">m.c.m. = 42axmnby</div>
                 </div>
             </div>
         </div>
 
-        <!-- ===== TAB 5: mcm POLINOMIOS (contenido COMPLETO + nuevos ejercicios) ===== -->
+        <!-- ============================================================ -->
+        <!-- TAB 5: mcm POLINOMIOS                                         -->
+        <!-- ============================================================ -->
         <div id="tab5" class="tab-content">
-            <h2 class="section-title">5.4.2 mcm de Polinomios</h2>
+            <h2 class="section-title">5.4.2 Mínimo común múltiplo de polinomios</h2>
+
             <div class="definition-box">
                 <p><strong>Procedimiento:</strong></p>
                 <ul class="steps">
-                    <li>• Expresar en productos mediante <strong>factorización</strong> (casos de factorización).</li>
-                    <li>• m.c.m. de coeficientes (como en aritmética).</li>
-                    <li>• Factores comunes y no comunes con <span style="color:#0369a1;">mayor exponente</span>.</li>
+                    <li>• Se debe expresar en productos por medio de la descomposición de factores (casos de factorización).</li>
+                    <li>• Se encuentra el m.c.m. de los coeficientes como en aritmética, de la parte literal, de los factores simples y compuestos, lo común y no común con <span style="color:#00695c;">mayor exponente</span>.</li>
                 </ul>
             </div>
 
-            <!-- EJEMPLO ORIGINAL -->
+            <!-- Ejemplo original del documento -->
             <div class="example-box">
-                <div class="label">📘 Ejemplo (del documento)</div>
+                <div class="label">📘 Ejemplo a)</div>
                 <div class="math">
-                    12x³−36x²−48x ; 8x⁴−8x²<br>
-                    = 12x(x²−3x−4) ; 8x²(x²−1)<br>
-                    = 2²·3·x·(x−4)(x+1) ; 2³·x²·(x−1)(x+1)<br>
+                    12x³−36x²−48x &nbsp;;&nbsp; 8x⁴−8x²<br>
+                    = 12x(x²−3x−4) &nbsp;;&nbsp; 8x²(x²−1)<br>
+                    = 2²·3·x·(x−4)(x+1) &nbsp;;&nbsp; 2³·x²·(x−1)(x+1)<br>
                     <span class="highlight-solution">m.c.m. = 2³·3·x²·(x−4)(x+1)(x−1) = 24x²(x−4)(x+1)(x−1)</span>
                 </div>
             </div>
 
-            <!-- NUEVOS EJEMPLOS (de la imagen) -->
+            <!-- Ejemplo b (de la imagen) -->
             <div class="example-box">
-                <div class="label">📘 Ejemplo b) (de la imagen)</div>
+                <div class="label">📘 Ejemplo b)</div>
                 <div class="math">
-                    m.c.m. de: 5a³y² − 5b³y²  ;  15a²y² − 30aby² + 15b²y²<br>
-                    = 5y²(a³ − b³)  ;  15y²(a² − 2ab + b²)<br>
-                    = 5y²(a − b)(a² + ab + b²)  ;  3·5y²(a − b)²<br>
+                    m.c.m. de: 5a³y² − 5b³y² &nbsp;;&nbsp; 15a²y² − 30aby² + 15b²y²<br>
+                    = 5y²(a³ − b³) &nbsp;;&nbsp; 15y²(a² − 2ab + b²)<br>
+                    = 5y²(a − b)(a² + ab + b²) &nbsp;;&nbsp; 3·5y²(a − b)²<br>
                     <span class="highlight-solution">m.c.m. = 15y²(a − b)²(a² + ab + b²)</span>
                 </div>
             </div>
 
+            <!-- Ejemplo c (de la imagen) -->
             <div class="example-box">
-                <div class="label">📘 Ejemplo c) (de la imagen)</div>
+                <div class="label">📘 Ejemplo c)</div>
                 <div class="math">
-                    m.c.m. de: x³ − 9x + 5x² − 45  ;  x⁴ + 2x³ − 15x²<br>
-                    = (x³ − 9x) + (5x² − 45)  ;  x²(x² + 2x − 15)<br>
-                    = x(x² − 9) + 5(x² − 9)  ;  x²(x + 5)(x − 3)<br>
-                    = (x² − 9)(x + 5)  ;  x²(x + 5)(x − 3)<br>
-                    = (x − 3)(x + 3)(x + 5)  ;  x²(x + 5)(x − 3)<br>
+                    m.c.m. de: x³ − 9x + 5x² − 45 &nbsp;;&nbsp; x⁴ + 2x³ − 15x²<br>
+                    = (x³ − 9x) + (5x² − 45) &nbsp;;&nbsp; x²(x² + 2x − 15)<br>
+                    = x(x² − 9) + 5(x² − 9) &nbsp;;&nbsp; x²(x + 5)(x − 3)<br>
+                    = (x² − 9)(x + 5) &nbsp;;&nbsp; x²(x + 5)(x − 3)<br>
+                    = (x − 3)(x + 3)(x + 5) &nbsp;;&nbsp; x²(x + 5)(x − 3)<br>
                     <span class="highlight-solution">m.c.m. = x²(x − 3)(x + 3)(x + 5)</span>
                 </div>
             </div>
 
-            <!-- EJERCICIOS COMPLETOS (incluye los nuevos de la imagen) -->
+            <!-- Ejercicios mcm Polinomios (completos) -->
             <div class="exercise-section">
-                <h4>✏️ Ejercicios - mcm de Polinomios</h4>
+                <h4>✏️ Ejercicios — mcm de polinomios</h4>
 
-                <!-- a) -->
                 <div class="exercise-item">
-                    <span class="question">a) 12m + 12  ;  42m − 42</span>
+                    <span class="question">a) 12m + 12 &nbsp;;&nbsp; 42m − 42</span>
                     <button class="solution-btn" data-solution="sol16">Mostrar solución</button>
                     <div id="sol16" class="solution-answer">m.c.m. = 84(m + 1)(m − 1) = 84(m² − 1)</div>
                 </div>
 
-                <!-- b) -->
                 <div class="exercise-item">
-                    <span class="question">b) 8n² − 10n − 3  ;  20n² + 13n + 2  ;  10n² − 11n − 6</span>
+                    <span class="question">b) 8n² − 10n − 3 &nbsp;;&nbsp; 20n² + 13n + 2 &nbsp;;&nbsp; 10n² − 11n − 6</span>
                     <button class="solution-btn" data-solution="sol17">Mostrar solución</button>
                     <div id="sol17" class="solution-answer">m.c.m. = (4n+1)(2n−3)(5n+2)(2n+1)</div>
                 </div>
 
-                <!-- c) -->
                 <div class="exercise-item">
-                    <span class="question">c) a³ − 27b³  ;  a² − 9b²  ;  a² − 6ab + 9b²  ;  a² + 3ab + 9b²</span>
+                    <span class="question">c) a³ − 27b³ &nbsp;;&nbsp; a² − 9b² &nbsp;;&nbsp; a² − 6ab + 9b² &nbsp;;&nbsp; a² + 3ab + 9b²</span>
                     <button class="solution-btn" data-solution="sol18">Mostrar solución</button>
                     <div id="sol18" class="solution-answer">m.c.m. = (a − 3b)²(a + 3b)(a² + 3ab + 9b²)</div>
                 </div>
 
-                <!-- d) -->
                 <div class="exercise-item">
-                    <span class="question">d) p³ + q³  ;  (p + q)³</span>
+                    <span class="question">d) p³ + q³ &nbsp;;&nbsp; (p + q)³</span>
                     <button class="solution-btn" data-solution="sol19">Mostrar solución</button>
                     <div id="sol19" class="solution-answer">m.c.m. = (p + q)³(p² − pq + q²)</div>
                 </div>
 
-                <!-- e) -->
                 <div class="exercise-item">
-                    <span class="question">e) x² + 2x  ;  x³ − 2x²  ;  x² − 4</span>
+                    <span class="question">e) x² + 2x &nbsp;;&nbsp; x³ − 2x² &nbsp;;&nbsp; x² − 4</span>
                     <button class="solution-btn" data-solution="sol20">Mostrar solución</button>
                     <div id="sol20" class="solution-answer">m.c.m. = x²(x + 2)(x − 2) = x²(x² − 4)</div>
                 </div>
             </div>
 
-            <!-- Nota adicional -->
-            <div style="background: #fce7f3; border-radius: 18px; padding: 20px 24px; margin-top: 18px;">
-                <h4 style="color: #9d174d;">📌 Nota importante</h4>
-                <p style="line-height: 1.7; color: #1e1b2e;">El m.c.m. de polinomios se obtiene multiplicando todos los factores <strong>comunes y no comunes</strong> con su <strong>mayor exponente</strong>. Siempre factorizar completamente primero.</p>
+            <div class="note-box">
+                <h4>📌 Nota importante</h4>
+                <p>El m.c.m. de polinomios se obtiene multiplicando todos los factores <strong>comunes y no comunes</strong> con su <strong>mayor exponente</strong>. Siempre factorizar completamente primero.</p>
             </div>
         </div>
 
+        <!-- ===== FOOTER ===== -->
         <div class="footer-note">
-            📚 Documento didactizado · Tema 5: Máximo Común Divisor y Mínimo Común Múltiplo · (sin 5.5)
+            📚 Documento didactizado · Tema 5: Máximo Común Divisor y Mínimo Común Múltiplo<br>
+            <span style="font-size: 0.85rem; color: #7b6b8a;">(Contenido completo, excepto sección 5.5: Ejercicios de opción múltiple)</span>
         </div>
     </div>
 
     <script>
-        // ===== TABS =====
+        // ================================================================
+        // SISTEMA DE PESTAÑAS
+        // ================================================================
         const tabBtns = document.querySelectorAll('.tab-btn');
         const tabContents = document.querySelectorAll('.tab-content');
 
+        function activateTab(tabId) {
+            // Desactivar todas
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Activar la seleccionada
+            const activeBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+            const activeContent = document.getElementById(tabId);
+
+            if (activeBtn) activeBtn.classList.add('active');
+            if (activeContent) activeContent.classList.add('active');
+        }
+
         tabBtns.forEach(btn => {
             btn.addEventListener('click', function() {
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabContents.forEach(c => c.classList.remove('active'));
-                this.classList.add('active');
-                const target = document.getElementById(this.dataset.tab);
-                if (target) target.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                activateTab(tabId);
             });
         });
 
-        // ===== SOLUTIONS TOGGLE =====
+        // ================================================================
+        // SISTEMA DE SOLUCIONES (toggle)
+        // ================================================================
         const solBtns = document.querySelectorAll('.solution-btn');
+
         solBtns.forEach(btn => {
             btn.addEventListener('click', function() {
-                const targetId = this.dataset.solution;
+                const targetId = this.getAttribute('data-solution');
                 const answerDiv = document.getElementById(targetId);
+
                 if (answerDiv) {
+                    const isShowing = answerDiv.classList.contains('show');
                     answerDiv.classList.toggle('show');
-                    this.textContent = answerDiv.classList.contains('show') ? 'Ocultar solución' : 'Mostrar solución';
+                    this.textContent = isShowing ? 'Mostrar solución' : 'Ocultar solución';
                 }
             });
         });
 
-        console.log('✅ Página didactizada
+        console.log('✅ Página didactizada de MCD y mcm cargada correctamente.');
+        console.log('📌 Contenido completo del documento (excepto 5.5)');
+    </script>
+</body>
+</html>
