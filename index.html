@@ -125,6 +125,12 @@
             color: #1a1a2e;
         }
 
+        .definition-box .second-paragraph {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed #d1c4e9;
+        }
+
         .highlight {
             background: linear-gradient(120deg, #fff3b0, #ffecb3);
             padding: 2px 12px;
@@ -238,6 +244,11 @@
             padding-right: 12px;
         }
 
+        .exercise-item .question .instruction {
+            font-weight: 700;
+            color: #4a148c;
+        }
+
         .exercise-item .solution-btn {
             background: linear-gradient(135deg, #5e35b1, #7b1fa2);
             color: white;
@@ -284,17 +295,6 @@
             border-top: 2px solid #e8e0f0;
             color: #6a5b7a;
             font-size: 0.92rem;
-        }
-
-        .badge {
-            display: inline-block;
-            background: #7b1fa2;
-            color: white;
-            padding: 2px 14px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-right: 6px;
         }
 
         .note-box {
@@ -356,6 +356,7 @@
             <h2 class="section-title">5.3 Definición de mínimo común múltiplo</h2>
             <div class="definition-box">
                 <p>El <span class="highlight">mínimo común múltiplo (m.c.m.)</span> de dos o más expresiones algebraicas es la expresión algebraica de <strong>menor coeficiente numérico</strong> y de <strong>menor grado</strong> que es divisible exactamente por cada una de las expresiones dadas.</p>
+                <p class="second-paragraph"><strong>Se halla el m.c.m.</strong>, de los coeficientes y a continuación de este se escriben todas las letras distintas, sean o no sean comunes, dando a cada letra el <strong>mayor exponente</strong> que tenga en las expresiones dadas.</p>
             </div>
 
             <div style="background: #e0e7ff; border-radius: 16px; padding: 18px 22px; margin-top: 18px;">
@@ -415,31 +416,31 @@
                 <h4>✏️ Ejercicios — MCD de monomios</h4>
 
                 <div class="exercise-item">
-                    <span class="question">a) 15a²b³c &nbsp;;&nbsp; 12ab²x &nbsp;;&nbsp; 36b⁴cy</span>
+                    <span class="question"><span class="instruction">Hallar el M.C.D. de:</span> 15a²b³c &nbsp;;&nbsp; 12ab²x &nbsp;;&nbsp; 36b⁴cy</span>
                     <button class="solution-btn" data-solution="sol1">Mostrar solución</button>
                     <div id="sol1" class="solution-answer">M.C.D. = 3b²c</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">b) 50m⁴y⁵z² &nbsp;;&nbsp; 45m²y³z⁶ &nbsp;;&nbsp; 70m³y⁴z⁴</span>
+                    <span class="question"><span class="instruction">Hallar el M.C.D. de:</span> 50m⁴y⁵z² &nbsp;;&nbsp; 45m²y³z⁶ &nbsp;;&nbsp; 70m³y⁴z⁴</span>
                     <button class="solution-btn" data-solution="sol2">Mostrar solución</button>
                     <div id="sol2" class="solution-answer">M.C.D. = 5m²y³z²</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">c) 8x²(y−1) &nbsp;;&nbsp; 12x(y−1)²</span>
+                    <span class="question"><span class="instruction">Hallar el M.C.D. de:</span> 8x²(y−1) &nbsp;;&nbsp; 12x(y−1)²</span>
                     <button class="solution-btn" data-solution="sol3">Mostrar solución</button>
                     <div id="sol3" class="solution-answer">M.C.D. = 4x(y−1)</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">d) 4m²n &nbsp;;&nbsp; 8m³n² &nbsp;;&nbsp; 2cm²n &nbsp;;&nbsp; 10c²mn³</span>
+                    <span class="question"><span class="instruction">Hallar el M.C.D. de:</span> 4m²n &nbsp;;&nbsp; 8m³n² &nbsp;;&nbsp; 2cm²n &nbsp;;&nbsp; 10c²mn³</span>
                     <button class="solution-btn" data-solution="sol4">Mostrar solución</button>
                     <div id="sol4" class="solution-answer">M.C.D. = 2mn</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">e) 36a²b⁴ &nbsp;;&nbsp; 48a³b⁸c &nbsp;;&nbsp; 60a⁴b⁸m</span>
+                    <span class="question"><span class="instruction">Hallar el M.C.D. de:</span> 36a²b⁴ &nbsp;;&nbsp; 48a³b⁸c &nbsp;;&nbsp; 60a⁴b⁸m</span>
                     <button class="solution-btn" data-solution="sol5">Mostrar solución</button>
                     <div id="sol5" class="solution-answer">M.C.D. = 12a²b⁴</div>
                 </div>
@@ -496,31 +497,31 @@
                 <h4>✏️ Ejercicios — MCD de polinomios</h4>
 
                 <div class="exercise-item">
-                    <span class="question">a) 2x³−2x² &nbsp;;&nbsp; 3x²−3x &nbsp;;&nbsp; 4x³−4x²</span>
+                    <span class="question"><span class="instruction">Hallar el M.C.D. de:</span> 2x³−2x² &nbsp;;&nbsp; 3x²−3x &nbsp;;&nbsp; 4x³−4x²</span>
                     <button class="solution-btn" data-solution="sol6">Mostrar solución</button>
                     <div id="sol6" class="solution-answer">M.C.D. = x(x−1)</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">b) 2x³+4x²−16x &nbsp;;&nbsp; 16(x²−4) &nbsp;;&nbsp; x²−7x+10</span>
+                    <span class="question"><span class="instruction">Hallar el M.C.D. de:</span> 2x³+4x²−16x &nbsp;;&nbsp; 16(x²−4) &nbsp;;&nbsp; x²−7x+10</span>
                     <button class="solution-btn" data-solution="sol7">Mostrar solución</button>
                     <div id="sol7" class="solution-answer">M.C.D. = (x−2)</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">c) 2a²+2ab &nbsp;;&nbsp; 4a⁴−4a²b²</span>
+                    <span class="question"><span class="instruction">Hallar el M.C.D. de:</span> 2a²+2ab &nbsp;;&nbsp; 4a⁴−4a²b²</span>
                     <button class="solution-btn" data-solution="sol8">Mostrar solución</button>
                     <div id="sol8" class="solution-answer">M.C.D. = 2a(a+b)</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">d) 4m²+8m−12 &nbsp;;&nbsp; 2m²−6m+4 &nbsp;;&nbsp; 6m²+18m−24</span>
+                    <span class="question"><span class="instruction">Hallar el M.C.D. de:</span> 4m²+8m−12 &nbsp;;&nbsp; 2m²−6m+4 &nbsp;;&nbsp; 6m²+18m−24</span>
                     <button class="solution-btn" data-solution="sol9">Mostrar solución</button>
                     <div id="sol9" class="solution-answer">M.C.D. = 2(m−1)</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">e) 3a²+6ab+3b² &nbsp;;&nbsp; 4a²−b² &nbsp;;&nbsp; a²+4ab+4b²</span>
+                    <span class="question"><span class="instruction">Hallar el M.C.D. de:</span> 3a²+6ab+3b² &nbsp;;&nbsp; 4a²−b² &nbsp;;&nbsp; a²+4ab+4b²</span>
                     <button class="solution-btn" data-solution="sol10">Mostrar solución</button>
                     <div id="sol10" class="solution-answer">M.C.D. = (a+b)</div>
                 </div>
@@ -576,31 +577,31 @@
                 <h4>✏️ Ejercicios — mcm de monomios</h4>
 
                 <div class="exercise-item">
-                    <span class="question">a) 25a³bc⁷ &nbsp;;&nbsp; 10ab²m</span>
+                    <span class="question"><span class="instruction">Hallar el m.c.m. de:</span> 25a³bc⁷ &nbsp;;&nbsp; 10ab²m</span>
                     <button class="solution-btn" data-solution="sol11">Mostrar solución</button>
                     <div id="sol11" class="solution-answer">m.c.m. = 50a³b²c⁷m</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">b) 8x²(m−n) &nbsp;;&nbsp; 12x(m−n)²</span>
+                    <span class="question"><span class="instruction">Hallar el m.c.m. de:</span> 8x²(m−n) &nbsp;;&nbsp; 12x(m−n)²</span>
                     <button class="solution-btn" data-solution="sol12">Mostrar solución</button>
                     <div id="sol12" class="solution-answer">m.c.m. = 24x²(m−n)²</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">c) 60x²y⁷z &nbsp;;&nbsp; 100x³z⁴ &nbsp;;&nbsp; 85yz⁵</span>
+                    <span class="question"><span class="instruction">Hallar el m.c.m. de:</span> 60x²y⁷z &nbsp;;&nbsp; 100x³z⁴ &nbsp;;&nbsp; 85yz⁵</span>
                     <button class="solution-btn" data-solution="sol13">Mostrar solución</button>
                     <div id="sol13" class="solution-answer">m.c.m. = 5100x³y⁷z⁵</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">d) 4a(b−2)(b+2) &nbsp;;&nbsp; 6a²(b+2)²</span>
+                    <span class="question"><span class="instruction">Hallar el m.c.m. de:</span> 4a(b−2)(b+2) &nbsp;;&nbsp; 6a²(b+2)²</span>
                     <button class="solution-btn" data-solution="sol14">Mostrar solución</button>
                     <div id="sol14" class="solution-answer">m.c.m. = 12a²(b−2)(b+2)²</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">e) 3ax &nbsp;;&nbsp; 2mn &nbsp;;&nbsp; 7by</span>
+                    <span class="question"><span class="instruction">Hallar el m.c.m. de:</span> 3ax &nbsp;;&nbsp; 2mn &nbsp;;&nbsp; 7by</span>
                     <button class="solution-btn" data-solution="sol15">Mostrar solución</button>
                     <div id="sol15" class="solution-answer">m.c.m. = 42axmnby</div>
                 </div>
@@ -661,31 +662,31 @@
                 <h4>✏️ Ejercicios — mcm de polinomios</h4>
 
                 <div class="exercise-item">
-                    <span class="question">a) 12m + 12 &nbsp;;&nbsp; 42m − 42</span>
+                    <span class="question"><span class="instruction">Hallar el m.c.m. de:</span> 12m + 12 &nbsp;;&nbsp; 42m − 42</span>
                     <button class="solution-btn" data-solution="sol16">Mostrar solución</button>
                     <div id="sol16" class="solution-answer">m.c.m. = 84(m + 1)(m − 1) = 84(m² − 1)</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">b) 8n² − 10n − 3 &nbsp;;&nbsp; 20n² + 13n + 2 &nbsp;;&nbsp; 10n² − 11n − 6</span>
+                    <span class="question"><span class="instruction">Hallar el m.c.m. de:</span> 8n² − 10n − 3 &nbsp;;&nbsp; 20n² + 13n + 2 &nbsp;;&nbsp; 10n² − 11n − 6</span>
                     <button class="solution-btn" data-solution="sol17">Mostrar solución</button>
                     <div id="sol17" class="solution-answer">m.c.m. = (4n+1)(2n−3)(5n+2)(2n+1)</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">c) a³ − 27b³ &nbsp;;&nbsp; a² − 9b² &nbsp;;&nbsp; a² − 6ab + 9b² &nbsp;;&nbsp; a² + 3ab + 9b²</span>
+                    <span class="question"><span class="instruction">Hallar el m.c.m. de:</span> a³ − 27b³ &nbsp;;&nbsp; a² − 9b² &nbsp;;&nbsp; a² − 6ab + 9b² &nbsp;;&nbsp; a² + 3ab + 9b²</span>
                     <button class="solution-btn" data-solution="sol18">Mostrar solución</button>
                     <div id="sol18" class="solution-answer">m.c.m. = (a − 3b)²(a + 3b)(a² + 3ab + 9b²)</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">d) p³ + q³ &nbsp;;&nbsp; (p + q)³</span>
+                    <span class="question"><span class="instruction">Hallar el m.c.m. de:</span> p³ + q³ &nbsp;;&nbsp; (p + q)³</span>
                     <button class="solution-btn" data-solution="sol19">Mostrar solución</button>
                     <div id="sol19" class="solution-answer">m.c.m. = (p + q)³(p² − pq + q²)</div>
                 </div>
 
                 <div class="exercise-item">
-                    <span class="question">e) x² + 2x &nbsp;;&nbsp; x³ − 2x² &nbsp;;&nbsp; x² − 4</span>
+                    <span class="question"><span class="instruction">Hallar el m.c.m. de:</span> x² + 2x &nbsp;;&nbsp; x³ − 2x² &nbsp;;&nbsp; x² − 4</span>
                     <button class="solution-btn" data-solution="sol20">Mostrar solución</button>
                     <div id="sol20" class="solution-answer">m.c.m. = x²(x + 2)(x − 2) = x²(x² − 4)</div>
                 </div>
@@ -699,8 +700,8 @@
 
         <!-- ===== FOOTER ===== -->
         <div class="footer-note">
-            📚 · Tema 5: Máximo Común Divisor y Mínimo Común Múltiplo<br>
-            <span style="font-size: 0.85rem; color: #7b6b8a;">(MATEMÁTICAS)</span>
+            📚 Documento didactizado · Tema 5: Máximo Común Divisor y Mínimo Común Múltiplo<br>
+            <span style="font-size: 0.85rem; color: #7b6b8a;">(Contenido completo, excepto sección 5.5: Ejercicios de opción múltiple)</span>
         </div>
     </div>
 
@@ -712,11 +713,9 @@
         const tabContents = document.querySelectorAll('.tab-content');
 
         function activateTab(tabId) {
-            // Desactivar todas
             tabBtns.forEach(btn => btn.classList.remove('active'));
             tabContents.forEach(content => content.classList.remove('active'));
 
-            // Activar la seleccionada
             const activeBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
             const activeContent = document.getElementById(tabId);
 
